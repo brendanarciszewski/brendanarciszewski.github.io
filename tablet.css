@@ -1,4 +1,8 @@
 /*This file should only apply for screens larger than 600px wide*/
+html {
+    font-size: 15px;
+}
+
 body {
     grid-template-areas: "nav nav"
                          "header header"
