@@ -1,0 +1,8 @@
+/*This file should only apply for screens larger than 900px wide*/
+body {
+    grid-template-areas: "nav    nav    nav   "
+                         "header header header"
+                         "main   main   quotes"
+                         "main   main   ..... "
+                         "footer footer footer";
+}

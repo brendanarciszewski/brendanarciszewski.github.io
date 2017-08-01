@@ -1,0 +1,45 @@
+a {
+    color: #0041C7;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #0034A1;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    background: #FFB100;
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+    display: grid;
+    grid-template-areas: "nav"
+                         "header"
+                         "quotes"
+                         "main"
+                         "footer";
+}
+
+nav.menu {
+    grid-area: nav;
+    background: grey;
+    margin-top: -0.5rem;
+    padding: 0.5rem;
+}
+
+header.header {
+    grid-area: header;
+    background: white;
+}
+
+
+aside.quotes {
+    grid-area: quotes;
+}
+
+footer.footer {
+    grid-area: footer;
+}
