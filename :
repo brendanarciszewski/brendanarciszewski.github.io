@@ -6,8 +6,8 @@ html {
     --module-background-colour: #bbb;
     --link-colour: #0041C7;
     --link-visited-colour: #0034A1;
-    --menu-item-background-colour: #999;
-    --menu-item-hover-background-colour: #666;
+    --menu-item-background-colour: #bbb;
+    --menu-item-hover-background-colour: #999;
     --menu-font-colour: #111;
 }
 
@@ -63,7 +63,7 @@ body {
 nav.menu {
     grid-area: nav;
     margin-top: -0.5rem;
-    padding: 1.5rem 0.5rem 1rem;
+    padding: 1.5rem 2rem 1rem 2rem;
     background: var(--module-background-colour);
 }
 nav.menu a,
@@ -72,12 +72,13 @@ nav.menu a:visited {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.075em;
-
-    padding: 1rem;
-    background: var(--menu-item-background-colour);
+    
+    background: var(--menu-item-background-color);
 }
 nav.menu a:hover {
-    background: var(--menu-item-hover-background-colour);
+    /*text-decoration: inherit;*/
+
+    background: var(--menu-item-hover-background-color);
 }
 
 header.header {
