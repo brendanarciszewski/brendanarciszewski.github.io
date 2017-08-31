@@ -2,8 +2,9 @@ html {
     font-size: 14px;
     font-family: Helvetica, sans-serif;
     font-color: black;
-    --main-background-colour: #FFB100;
-    --module-background-colour: #bbb;
+    --main-background-colour: #339933;
+    --module-padding: 0.5rem 1.25rem 0.5rem 1.25rem;
+    --module-background-colour: #FFB100;
     --link-colour: #0041C7;
     --link-visited-colour: #0034A1;
     --menu-item-background-colour: #999;
@@ -52,22 +53,25 @@ body {
     background: var(--main-background-colour);
     font-size: 1rem;
     display: grid;
-    margin: 0 1.5rem 1.5rem 1.5rem;
-    grid-template-areas: "nav   "
-                         "header"
-                         "quotes"
-                         "main  "
-                         "footer";
+    grid-gap: 10px;
+    margin: 0 3.5rem 1.5rem 3.5rem;
+    grid-template-columns: 100%;
+    grid-template-areas: "nav       "
+                         "header    "
+                         "before-con"
+                         "main      "
+                         "after-con "
+                         "footer    ";
 }
 
-nav#menu {
+nav#nav {
     grid-area: nav;
     margin-top: -0.5rem;
     padding: 1.5rem 0.5rem 1rem;
     background: var(--module-background-colour);
 }
-nav#menu a,
-nav#menu a:visited {
+nav#nav a,
+nav#nav a:visited {
     color: var(--menu-font-colour);
     text-decoration: none;
     font-weight: bold;
@@ -76,24 +80,37 @@ nav#menu a:visited {
     padding: 1rem;
     background: var(--menu-item-background-colour);
 }
-nav#menu a:hover {
+nav#nav a:hover {
     background: var(--menu-item-hover-background-colour);
 }
 
 header#header {
     grid-area: header;
-    background: white;
-    padding: 0.5rem 1.25rem 0.5rem 1.25rem;
+    background: var(--module-background-colour);
+    padding: var(--module-padding);
 }
 
+div#before-con {
+    grid-area: before-con;
+    background: var(--module-background-colour);
+    padding: var(--module-padding);
+}
 
-aside#quotes {
-    grid-area: quotes;
+div#after-con {
+    grid-area: after-con;
+    background: var(--module-background-colour);
+    padding: var(--module-padding);
 }
 
 footer#footer {
     grid-area: footer;
+    background: var(--module-background-colour);
+    padding: var(--module-padding);
 }
+
+/* -----------------------------------------------
+ * Content Area
+ * ----------------------------------------------- */
 
 main {
     grid-area: main;
@@ -102,23 +119,18 @@ main {
     grid-template-columns: 100%;
     grid-gap: 10px;
     grid-template-areas: "con_nav    "
-                         "con_intro  "
                          "con_article"
                          "con_sidebar"
-                         "con_end    ";
-    
 }
 
-main nav {
+main nav#con_nav {
     grid-area: con_nav;
 }
 
-main article {
+main article#con_article {
     grid-area: con_article;
 }
 
 main div#con_sidebar {
-
+    grid-area: con_sidebar;
 }
-
-main div

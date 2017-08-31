@@ -3,18 +3,8 @@ html {
     font-size: 15px;
 }
 
-body {
-    grid-template-areas: "nav    nav   "
-                         "header header"
-                         "main   quotes"
-                         "main   ......"
-                         "footer footer";
-}
-
 main {
-    grid-template-areas: "main_nav     main_nav  "
-                         "main_article main_intro"
-                         "main_article main_side "
-                         "main_article .........."
-                         "............ main_end  ";
+    grid-template-columns: 62% 38%;
+    grid-template-areas: "con_nav     con_nav    "
+                         "con_article con_sidebar"
 }

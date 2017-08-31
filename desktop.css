@@ -2,11 +2,3 @@
 html {
     font-size: 16px;
 }
-
-body {
-    grid-template-areas: "nav    nav    nav   "
-                         "header header header"
-                         "main   main   quotes"
-                         "main   main   ..... "
-                         "footer footer footer";
-}
