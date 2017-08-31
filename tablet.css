@@ -4,9 +4,17 @@ html {
 }
 
 body {
-    grid-template-areas: "nav nav"
+    grid-template-areas: "nav    nav   "
                          "header header"
-                         "main quotes"
-                         "main ..."
+                         "main   quotes"
+                         "main   ......"
                          "footer footer";
+}
+
+main {
+    grid-template-areas: "main_nav     main_nav  "
+                         "main_article main_intro"
+                         "main_article main_side "
+                         "main_article .........."
+                         "............ main_end  ";
 }

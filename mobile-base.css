@@ -53,21 +53,21 @@ body {
     font-size: 1rem;
     display: grid;
     margin: 0 1.5rem 1.5rem 1.5rem;
-    grid-template-areas: "nav"
+    grid-template-areas: "nav   "
                          "header"
                          "quotes"
-                         "main"
+                         "main  "
                          "footer";
 }
 
-nav.menu {
+nav#menu {
     grid-area: nav;
     margin-top: -0.5rem;
     padding: 1.5rem 0.5rem 1rem;
     background: var(--module-background-colour);
 }
-nav.menu a,
-nav.menu a:visited {
+nav#menu a,
+nav#menu a:visited {
     color: var(--menu-font-colour);
     text-decoration: none;
     font-weight: bold;
@@ -76,21 +76,49 @@ nav.menu a:visited {
     padding: 1rem;
     background: var(--menu-item-background-colour);
 }
-nav.menu a:hover {
+nav#menu a:hover {
     background: var(--menu-item-hover-background-colour);
 }
 
-header.header {
+header#header {
     grid-area: header;
     background: white;
     padding: 0.5rem 1.25rem 0.5rem 1.25rem;
 }
 
 
-aside.quotes {
+aside#quotes {
     grid-area: quotes;
 }
 
-footer.footer {
+footer#footer {
     grid-area: footer;
 }
+
+main {
+    grid-area: main;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 10px;
+    grid-template-areas: "con_nav    "
+                         "con_intro  "
+                         "con_article"
+                         "con_sidebar"
+                         "con_end    ";
+    
+}
+
+main nav {
+    grid-area: con_nav;
+}
+
+main article {
+    grid-area: con_article;
+}
+
+main div#con_sidebar {
+
+}
+
+main div
