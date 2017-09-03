@@ -161,6 +161,7 @@ main {
     grid-template-areas: "con_nav    "
                          "con_article"
                          "con_sidebar";
+    /*make these corners round and fade between dark and normal bg colour*/
     background: var(--module-dark-background-colour);
     padding: var(--module-padding);
 }
