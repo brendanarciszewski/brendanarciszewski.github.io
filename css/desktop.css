@@ -1,0 +1,7 @@
+/*This file should only apply for screens larger than 1000px wide*/
+
+@media (min-width: 1264px) {
+	html {
+		--main-margin: 0 auto 2.5vw auto;
+	}
+}

@@ -1,0 +1,6 @@
+/*This file should only apply for screens larger than 600px wide*/
+main {
+    grid-template-columns: 62% 38%;
+    grid-template-areas: "con_nav     con_nav    "
+                         "con_article con_sidebar"
+}
