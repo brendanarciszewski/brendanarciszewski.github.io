@@ -1,24 +1,16 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html>
   <head>
     <title>Brendan Arciszewski</title>
-    <link rel="stylesheet" href="css/mobile-base.css">
-    <link rel="stylesheet" media="(min-width: 600px)" href="css/tablet.css">
-    <link rel="stylesheet" media="(min-width: 1000px)" href="css/desktop.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta charset="UTF-8" />
-    <meta name="description" content="My Personal Website" />
-    <meta name="keywords" content="personal, interests, resume" />
-    <meta name="author" content="Brendan Arciszewski" />
+    {% include meta_head.ext %} 
     <style>
     </style>
   </head>
   <body>
-    <nav id="nav">
-      <h6><a href="index.html">Home</a></h6>
-      <h6><a href="projects.html">Projects</a></h6>
-      <h6><a href="contact.html">Contact</a></h6>
-    </nav>
+    {% include main_nav.ext %}
     <section role="banner">
       <img src="" class="block" />
       <header id="header"><h1>Brendan Arciszewski</h1></header>
@@ -69,7 +61,7 @@
     </div>
     <footer id="footer">
       <a href="https://linkedin.com/in/brendan-arciszewski">LinkedIn</a>
-      <span>Copyright &copy; 2017 Brendan Arciszewski</span>
+      <span>Copyright &copy; 2018 Brendan Arciszewski</span>
     </footer>
   </body>
 </html>
