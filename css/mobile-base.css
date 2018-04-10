@@ -136,6 +136,11 @@ nav#nav a:visited {
 nav#nav a:hover {
     background: var(--highlight-colour);
 }
+nav#nav a.active, 
+nav#nav a.active#hover {
+    background: var(--module-background-colour);
+    color: grey;
+}
 
 header#header {
     grid-area: header;
