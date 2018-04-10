@@ -8,12 +8,12 @@
  * ----------------------------------------------- */
 
 html {
-    font: 15px 'Source Sans Pro', sans-serif;
-    --main-background-colour: #3BB03B;
-    --main-margin: 0 2.5vw 2.5vw 2.5vw;
-    --module-padding: 0.75rem;
-    --module-background-colour: #FFB100;
-    --module-dark-background-colour: #E09C00;
+    font: 0.9em 'Source Code Pro', sans-serif;
+    --main-background-colour: #333333; /*3BB03B*/
+    --main-margin: 0;
+    --module-padding: 1rem 3rem;
+    --module-background-colour: #EAEAEA; /*FFB100*/
+    --highlight-colour: #3BB03B; /*E09C00*/
     --link-colour: #0041C7;
     --link-visited-colour: #0034A1;
     --menu-item-background-colour: #999;
@@ -28,23 +28,28 @@ figure {
     padding: 0;
 }
 
-//todo: 1. rounded corners. 2. better dark orange 3. remove unneeded sections perpage 4. make other pages
+/*Title*/
+h1 {
+    font-size: 1.75rem;
+    color: var(--highlight-colour);
+}
 
-h1 {font-size: 1.75rem;}
-
+/*Level One*/
 h2 {font-size: 1.55rem;}
 
+/*Level Two*/
 h3 {font-size: 1.35rem;}
 
+/*Level Three*/
 h4 {font-size: 1.25rem;}
 
-h5 {font-size: 1.15rem;}
-
+/*Nav Items*/
 h6 {
     font-size: 1.1rem;
     display: inline-block;
 }
 
+/*Header Spacing*/
 h1,
 h2,
 h3,
@@ -52,16 +57,16 @@ h4,
 h5,
 h6 {
     margin: 0.5em 0 0.25em 0;
-    font-family: 'Source Code Pro';
 }
 
+/*Level Headings left of content*/
 h2,
-h3 {
+h3,
+h4 {
     margin-left: -0.125em;
 }
 
-/*--figure out how to make hx margin top disappear if first element/
- *--how to make header have different top margin based on hx tag inside
+/*Remove Duplicate Space*/
 h1:first-child,
 h2:first-child,
 h3:first-child,
@@ -70,23 +75,20 @@ h5:first-child,
 h6:first-child {
     margin-top: 0;
 }
-*/
+
 
 ul, ol {
     margin: 0;
-    padding: 0 0 0 1em;
+    padding: 0 0 0 1.25em;
 }
 
+/*Links*/
 a {
     color: var(--link-colour);
     text-decoration: underline;
-}
-
-a:visited {
+} a:visited {
     color: var(--link-visited-colour);
-}
-
-a:hover {
+} a:hover {
     text-decoration: none;
 }
 
@@ -101,14 +103,12 @@ a:hover {
 body {
     background: var(--main-background-colour);
     margin: var(--main-margin);
-    font-size: 1rem;
-    max-width: 1200px;
 
     display: grid;
-    grid-gap: 0.75rem;
+    /*grid-gap: 0.75rem;*/
     justify-content: center;
     align-content: center;
-    grid-template-columns: 100%;
+    grid-template-columns: min(97%, 65em);
     grid-template-areas: "nav       "
                          "header    "
                          "before-con"
@@ -120,7 +120,7 @@ body {
 nav#nav {
     grid-area: nav;
     margin: -0.5rem 0 0 0;
-    padding: 1.5rem 0.5rem 1rem;
+    padding: var(--module-padding);
     background: var(--module-background-colour);
 }
 nav#nav a,
@@ -133,21 +133,19 @@ nav#nav a:visited {
     padding: 1rem;
 }
 nav#nav a:hover {
-    background: var(--module-dark-background-colour);
+    background: var(--highlight-colour);
 }
 
 header#header {
     grid-area: header;
     background: var(--module-background-colour);
     padding: var(--module-padding);
-    margin: 0;
 }
 
 div#before-con {
     grid-area: before-con;
     background: var(--module-background-colour);
     padding: var(--module-padding);
-    margin: 0;
 }
 
 div#after-con {
@@ -171,13 +169,15 @@ main {
 
     display: grid;
     grid-template-columns: 100%;
-    grid-gap: 0.75rem;
+    grid-gap: 0rem;
     grid-template-areas: "con_nav    "
                          "con_article"
                          "con_sidebar";
-    /*make these corners round and fade between dark and normal bg colour*/
-    background: var(--module-dark-background-colour);
+    /*coloured bands only above and below*/
+    background: var(--highlight-colour);
     padding: var(--module-padding);
+    padding-left: 0;
+    padding-right: 0;
 }
 
 main nav#con_nav {
