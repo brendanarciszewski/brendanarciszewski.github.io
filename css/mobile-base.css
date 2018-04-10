@@ -10,7 +10,7 @@
 html {
     font: 0.9em 'Source Code Pro', sans-serif;
     --main-background-colour: #333333; /*3BB03B*/
-    --main-margin: 0;
+    --main-margin: 0 auto;
     --module-padding: 1rem 3rem;
     --module-background-colour: #EAEAEA; /*FFB100*/
     --highlight-colour: #3BB03B; /*E09C00*/
@@ -105,10 +105,11 @@ body {
     margin: var(--main-margin);
 
     display: grid;
-    /*grid-gap: 0.75rem;*/
+    grid-gap: 0rem;
     justify-content: center;
     align-content: center;
-    grid-template-columns: min(97%, 65em);
+    max-width: 65em;
+    grid-template-columns: 100%;
     grid-template-areas: "nav       "
                          "header    "
                          "before-con"
