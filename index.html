@@ -1,41 +1,9 @@
 ---
-layout: null
+layout: mystyle
+title: Brendan Arciszewski
 con_sidebar_1: interests.html
 con_sidebar_2: achievements.html
 after_con: quotes.html
 ---
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Brendan Arciszewski</title>
-    {% include meta_head.html %} 
-    <style>
-    </style>
-  </head>
-  <body>
-    {% include main_nav.html %}
-    <section role="banner">
-      <img src="" class="block" />
-      <header id="header"><h1>Brendan Arciszewski</h1></header>
-    </section>
-    <div id="before-con"></div>
-    <main>
-      <nav id="con_nav"></nav>
-      <article id="con_article">
-        <header><h2>About Me</h2></header>
-        <p>I endeavour to be curious about robotics, and inspire that curiousity within others. Sometimes that curiousity leads to cool products, but it doesn't have to. It also doesn't have to mean I learned anything knew, because sometimes seeing is believing.</p>
-      </article>
-      <div id="con_sidebar">
-        {% if page.con_sidebar_1 %}{% include {{ page.con_sidebar_1 }} %}{% endif %}
-        {% if page.con_sidebar_2 %}{% include {{ page.con_sidebar_2 }} %}{% endif %}
-      </div>
-    </main>
-    <div id="after-con">
-      {% if page.after_con %}{% include {{ page.after_con }} %}{% endif %}
-    </div>
-    <footer id="footer">
-      <a href="https://linkedin.com/in/brendan-arciszewski">LinkedIn</a>
-      <span>Copyright &copy; 2018 Brendan Arciszewski</span>
-    </footer>
-  </body>
-</html>
+<header><h2>About Me</h2></header>
+<p>I endeavour to be curious about robotics, and inspire that curiousity within others. Sometimes that curiousity leads to cool products, but it doesn't have to. It also doesn't have to mean I learned anything knew, because sometimes seeing is believing.</p>

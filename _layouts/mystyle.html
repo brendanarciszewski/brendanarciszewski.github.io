@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    {% include meta_head.html %} 
+    <style>
+    </style>
+  </head>
+  <body>
+    {% include main_nav.html %}
+    <section role="banner">
+      <img src="" class="block" />
+      <header id="header"><h1>{{ page.title }}</h1></header>
+    </section>
+    {% if page.before_con %}
+    <div id="before-con">{% if page.before_con %}{% include {{ page.before_con }} %}{% endif %}</div>
+    {% endif %}
+    <main>
+      {% if page.con_nav %}
+      <nav id="con_nav">{% include {{ page.con_nav }} %}</nav>
+      {% endif %}
+      <article id="con_article">
+        {{ content }}
+      </article>
+      {% if page.con_sidebar_1 or page.con_sidebar_2 %}
+      <div id="con_sidebar">
+        {% if page.con_sidebar_1 %}{% include {{ page.con_sidebar_1 }} %}{% endif %}
+        {% if page.con_sidebar_2 %}{% include {{ page.con_sidebar_2 }} %}{% endif %}
+      </div>
+      {% endif %}
+    </main>
+    {% if page.after_con %}
+    <div id="after-con">
+      {% if page.after_con %}{% include {{ page.after_con }} %}{% endif %}
+    </div>
+    {% endif %}
+    <footer id="footer">
+      <a href="https://linkedin.com/in/brendan-arciszewski">LinkedIn</a>
+      <span>Copyright &copy; 2018 Brendan Arciszewski</span>
+    </footer>
+  </body>
+</html>
