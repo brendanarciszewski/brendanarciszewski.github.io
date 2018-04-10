@@ -1,16 +1,19 @@
 ---
 layout: null
+con_sidebar_1: interests.html
+con_sidebar_2: achievements.html
+after_con: quotes.html
 ---
 <!DOCTYPE html>
 <html>
   <head>
     <title>Brendan Arciszewski</title>
-    {% include meta_head.ext %} 
+    {% include meta_head.html %} 
     <style>
     </style>
   </head>
   <body>
-    {% include main_nav.ext %}
+    {% include main_nav.html %}
     <section role="banner">
       <img src="" class="block" />
       <header id="header"><h1>Brendan Arciszewski</h1></header>
@@ -23,41 +26,12 @@ layout: null
         <p>I endeavour to be curious about robotics, and inspire that curiousity within others. Sometimes that curiousity leads to cool products, but it doesn't have to. It also doesn't have to mean I learned anything knew, because sometimes seeing is believing.</p>
       </article>
       <div id="con_sidebar">
-        <aside id="interests">
-          <header><h3>Interests</h3></header>
-          <ul>
-            <li>Playing:</li>
-            <ul>
-              <li>Hockey</li>
-              <li>Soccer</li>
-              <li>(and almost any other sport)</li>
-            </ul>
-            <li>Learning about:</li>
-            <ul>
-              <li>Physics</li>
-              <li>Chemistry</li>
-              <li>Math</li>
-              <li>Me!</li>
-            </ul>
-          </ul>
-        </aside>
-        <aside id="achievements">
-          <header><h3>Achievements</h3></header>
-          <ul>
-            <li>SHAD Fellow</li>
-            <li>Bruce Power Future Innovator</li>
-            <li>Responsibility to Protect Advocate</li>
-            <li>Schulich Leader Nominee</li>
-          </ul>
-          <p>Short, but sweet, isn't it?</p>
-        </aside>
+        {% if page.con_sidebar_1 %}{% include {{ page.con_sidebar_1 }} %}{% endif %}
+        {% if page.con_sidebar_2 %}{% include {{ page.con_sidebar_2 }} %}{% endif %}
       </div>
     </main>
     <div id="after-con">
-      <section id="quotes">
-        <header><h3>Inspirations</h3></header>
-        <blockquote class="quotes-changer">Dynamic content.</blockquote>
-      </section>
+      {% if page.after_con %}{% include {{ page.after_con }} %}{% endif %}
     </div>
     <footer id="footer">
       <a href="https://linkedin.com/in/brendan-arciszewski">LinkedIn</a>
