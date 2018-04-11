@@ -1,0 +1,10 @@
+---
+layout: BDA_static
+title: Brendan Arciszewski
+permalink: /
+before_con: achievements.html
+after_con: quotes.html
+con_sidebar_1: interests.html
+---
+## About Me
+I am interested in robotics, and want to inspire that curiousity within others. Sometimes that curiousity leads to cool products. It also means that I always succeed, because I will have learned.
