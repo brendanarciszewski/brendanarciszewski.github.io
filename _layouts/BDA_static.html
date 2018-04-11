@@ -1,60 +1,29 @@
 ---
-navigation:
- - text: Home
-   url: /
- - text: Projects
-   url: /projects/
+layout: BDA_base
 ---
-<!DOCTYPE html>
-<html>
-<head>
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/css/mobile-base.css">
-  <link rel="stylesheet" media="(min-width: 600px)" href="/css/tablet.css">
-  <link rel="stylesheet" media="(min-width: 1000px)" href="/css/desktop.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta charset="UTF-8" />
-  <meta name="description" content="My Personal Website" />
-  <meta name="keywords" content="personal, interests, resume" />
-  <meta name="author" content="Brendan Arciszewski" />
-</head>
-<body>
-  <nav id="nav">
-    {% for link in layout.navigation %}
-    <h6>
-      <a {% if page.url == link.url %}class="active"{% endif %} href="{{link.url}}" title="{{link.title}}">{{link.text}}</a>
-    </h6>
-    {% endfor %}
-  </nav>
-  <section role="banner">
-    <img src="" class="block" />
-    <header id="header"><h1>{{ page.title }}</h1></header>
-  </section>
-  {% if page.before_con %}
-  <div id="before-con">{% if page.before_con %}{% include {{ page.before_con }} %}{% endif %}</div>
+<section role="banner">
+  <img src="" class="block" />
+  <header id="header"><h1>{{ page.title }}</h1></header>
+</section>
+{% if page.before_con %}
+<div id="before-con">{% if page.before_con %}{% include {{ page.before_con }} %}{% endif %}</div>
+{% endif %}
+<main {% if page.con_sidebar_1 or page.con_sidebar_2 %}class="withSidebar"{% endif %}>
+  {% if page.con_nav %}
+  <nav id="con_nav">{% include {{ page.con_nav }} %}</nav>
   {% endif %}
-  <main {% if page.con_sidebar_1 or page.con_sidebar_2 %}class="withSidebar"{% endif %}>
-    {% if page.con_nav %}
-    <nav id="con_nav">{% include {{ page.con_nav }} %}</nav>
-    {% endif %}
-    <article id="con_article">
-      {{ content }}
-    </article>
-    {% if page.con_sidebar_1 or page.con_sidebar_2 %}
-    <div id="con_sidebar">
-      {% if page.con_sidebar_1 %}{% include {{ page.con_sidebar_1 }} %}{% endif %}
-      {% if page.con_sidebar_2 %}{% include {{ page.con_sidebar_2 }} %}{% endif %}
-    </div>
-    {% endif %}
-  </main>
-  {% if page.after_con %}
-  <div id="after-con">
-    {% if page.after_con %}{% include {{ page.after_con }} %}{% endif %}
+  <article id="con_article">
+    {{ content }}
+  </article>
+  {% if page.con_sidebar_1 or page.con_sidebar_2 %}
+  <div id="con_sidebar">
+    {% if page.con_sidebar_1 %}{% include {{ page.con_sidebar_1 }} %}{% endif %}
+    {% if page.con_sidebar_2 %}{% include {{ page.con_sidebar_2 }} %}{% endif %}
   </div>
   {% endif %}
-  <footer id="footer">
-    <a href="https://linkedin.com/in/brendan-arciszewski">LinkedIn</a>
-    <span>Copyright &copy; 2018 Brendan Arciszewski</span>
-  </footer>
-</body>
-</html>
+</main>
+{% if page.after_con %}
+<div id="after-con">
+  {% if page.after_con %}{% include {{ page.after_con }} %}{% endif %}
+</div>
+{% endif %}

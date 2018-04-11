@@ -1,0 +1,14 @@
+---
+layout: BDA_static
+---
+
+{{ content }}
+
+<ul class="category-list">
+	{% for post in site.posts %}
+	<li>
+		<a class="show-hidden" href="#"><h2>{{ post.title }}</h2></a>
+		<div class="modal hide"> {{post.content}} </div>
+	</li>
+	{% endfor %}
+</ul>

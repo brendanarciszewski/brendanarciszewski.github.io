@@ -1,6 +1,6 @@
 ---
 layout: BDA_static
-title: Brendan Arciszewski
+title: "Brendan Arciszewski"
 permalink: /
 before_con: achievements.html
 after_con: quotes.html

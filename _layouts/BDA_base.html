@@ -1,0 +1,35 @@
+---
+navigation:
+  - text: Home
+    url: /
+  - text: Projects
+    url: /projects/
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/css/mobile-base.css">
+  <link rel="stylesheet" media="(min-width: 600px)" href="/css/tablet.css">
+  <link rel="stylesheet" media="(min-width: 1000px)" href="/css/desktop.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/js/scripts.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="description" content="My Personal Website" />
+  <meta name="keywords" content="personal, resume, robotics, robots, control systems, control, development" />
+  <meta name="author" content="Brendan Arciszewski" />
+</head>
+<body>
+  <nav id="nav">
+    {% for link in layout.navigation %}
+    <a {% if page.url == link.url %}class="active"{% endif %} href="{{link.url}}" title="{{link.title}}">{{link.text}}</a>
+    {% endfor %}
+  </nav>
+  {{ content }}
+  <footer id="footer">
+    <a href="https://linkedin.com/in/brendan-arciszewski">LinkedIn</a>
+    <span>Copyright &copy; 2018 Brendan Arciszewski</span>
+  </footer>
+</body>
+</html>
