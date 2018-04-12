@@ -4,3 +4,8 @@ main.withSidebar {
     grid-template-areas: "con_nav		con_nav"
                          "con_article	con_sidebar";
 }
+
+div.category-list > div.category-list-column {
+    flex: 50%;
+    max-width: 50%;
+}

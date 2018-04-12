@@ -1,1 +1,5 @@
 /*This file should only apply for screens larger than 1000px wide*/
+div.category-list > div.category-list-column {
+    flex: 25%;
+    max-width: 25%;
+}
