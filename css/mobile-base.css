@@ -16,9 +16,6 @@ html {
     --highlight-colour: #3BB03B; /*E09C00*/
     --link-colour: #0041C7;
     --link-visited-colour: #0034A1;
-    --menu-item-background-colour: #999;
-    --menu-item-hover-background-colour: #666;
-    --menu-font-colour: #111;
 }
 
 p,
@@ -68,8 +65,15 @@ h6:first-child {
     margin-top: 0;
 }
 
+/*Subheader*/
+header > p {
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+    font-style: italic;
+}
 
-ul, ol {
+ul, 
+ol {
     margin: 0;
     padding: 0 0 0 1.25em;
 }
@@ -183,19 +187,19 @@ main {
     padding-right: 0;
 }
 
-main nav#con_nav {
+main > nav#con_nav {
     grid-area: con_nav;
     background: var(--module-background-colour);
     padding: var(--module-padding);
 }
 
-main article#con_article {
+main > article#con_article {
     grid-area: con_article;
     background: var(--module-background-colour);
     padding: var(--module-padding);
 }
 
-main div#con_sidebar {
+main > div#con_sidebar {
     grid-area: con_sidebar;
     background: var(--module-background-colour);
     padding: var(--module-padding);
