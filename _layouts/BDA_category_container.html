@@ -1,15 +1,6 @@
 ---
 layout: BDA_static
 ---
-{{ content }}
-<!--<ul class="category-list">
-	{% for post in site.categories[page.category] %}
-	<li>
-		<a class="show-hidden" href="#"><h2>{{ post.title }}</h2></a>
-		<div class="modal hide" style="margin-top: -0.5em; margin-bottom: 1.5em;"> {{post.content}} </div>
-	</li>
-	{% endfor %}
-</ul>-->
 {% assign counter = 1 %}{% for item in site.categories[page.category] %}{% unless item.published == false %}{% assign counter=counter | plus:1 %}{% endunless %}{% endfor %}{% assign counter = counter | divided_by: 4 %}
 {% assign count = -1 %}
 <div class="category-list">
