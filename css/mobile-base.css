@@ -22,13 +22,15 @@
 
 html {
     font: 0.9em AcherusGrotesque, Helvetica, Arial, sans-serif;
-    --main-background-colour: #333333; /*3BB03B*/
+    --main-background-colour: #333333;
     --main-margin: 0 auto;
     --module-padding: 1rem 3rem;
-    --module-background-colour: #EAEAEA; /*FFB100*/
-    --highlight-colour: #3BB03B; /*E09C00*/
+    --module-background-colour: #EAEAEA;
+    --highlight-colour: #3BB03B;
     --link-colour: #0041C7;
     --link-visited-colour: #0034A1;
+    /* Prevents Landscape Text Adjustment on iOS*/
+    -webkit-text-size-adjust: 100%;
 }
 
 p,
