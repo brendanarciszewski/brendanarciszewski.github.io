@@ -158,10 +158,19 @@ nav#nav > a.active#hover {
     color: grey;
 }
 
-header#header {
-    grid-area: header;
+section#header {
     background: var(--module-background-colour);
     padding: var(--module-padding);
+}
+section#header header {
+    grid-area: header;
+}
+section#header img#headshot {
+    float: right;
+    height: 200px;
+    margin-top: -136px;
+    margin-right: -43px;
+    margin-bottom: -100px;
 }
 
 div#before-con {
