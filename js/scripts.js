@@ -1,6 +1,9 @@
 $(document).ready(function () {
 	$("img").each( function () {
-		$(this).attr("title", $(this).attr("alt"));
+		var attr = $(this).attr("title");
+		if (typeof attr === typeof undefined || attr === false) {
+			$(this).attr("title", $(this).attr("alt"));
+		}
 	});
 	
 	$("a.show-hidden").on("click", function () {
