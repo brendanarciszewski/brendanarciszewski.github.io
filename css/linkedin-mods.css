@@ -1,0 +1,6 @@
+.LI-badge-container.vertical.light {
+	background-color: var(--module-background-colour) !important;
+}
+.LI-badge-container.vertical.light .LI-profile-pic {
+	border-color: var(--module-background-colour) !important;
+}

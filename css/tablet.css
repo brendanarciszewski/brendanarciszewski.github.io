@@ -4,3 +4,8 @@ main.withSidebar {
     grid-template-areas: "con_nav		con_nav"
                          "con_article	con_sidebar";
 }
+
+footer > div#row1 {
+	display: flex;
+	justify-content: space-between;
+}
