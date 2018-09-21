@@ -22,7 +22,7 @@ navigation:
     gtag('config', 'UA-117362578-1');
   </script>
   <!-- End Google Analytics -->
-  <title>{{ page.title }}</title>
+  <title>{{ page.title }}{% if page.url != '/' %} | BA{% endif %}</title>
   <link rel="stylesheet" href="/css/mobile-base.css">
   <link rel="stylesheet" media="(min-width: 600px)" href="/css/tablet.css">
   <link rel="stylesheet" media="(min-width: 1000px)" href="/css/desktop.css">
