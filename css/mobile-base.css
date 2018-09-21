@@ -167,10 +167,10 @@ section#header header {
 }
 section#header img#headshot {
     float: right;
-    height: 200px;
-    margin-top: -136px;
-    margin-right: -43px;
-    margin-bottom: -100px;
+    height: 20vw;
+    max-height: 150px;
+    margin-top: calc(-60px - 3vw);
+    border-radius: 50%;
 }
 
 div#before-con {

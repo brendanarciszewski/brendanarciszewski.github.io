@@ -3,7 +3,7 @@ layout: BDA_static
 title: "Brendan Arciszewski"
 permalink: /
 before_con: achievements.html
-after_con: quotes.html
+-after_con: quotes.html
 con_sidebar_1: encouragement.md
 ---
 ## About Me
