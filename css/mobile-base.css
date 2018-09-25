@@ -228,3 +228,15 @@ main > div#con_sidebar {
     background: var(--module-background-colour);
     padding: var(--module-padding);
 }
+
+ul.category-list {
+    list-style: none;
+    padding: 0;
+}
+/*ul.category-list > li:before {
+    content: '\25B6';
+    margin: 0 1em 0 0;
+}*/
+ul.category-list > li > div {
+    margin-bottom: 2em;
+}
