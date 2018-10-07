@@ -172,6 +172,9 @@ section#header img#headshot {
     margin-top: calc(-60px - 3vw);
     border-radius: 50%;
 }
+section#header h1 {
+    width: 70%;
+}
 
 div#before-con {
     grid-area: before-con;
