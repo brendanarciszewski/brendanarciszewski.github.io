@@ -6,10 +6,12 @@ navigation:
     url: /projects/
   - text: LinkedIn
     url: https://linkedin.com/in/brendan-arciszewski
-    newWindow: true
+    onClick: gtag('send', 'event', 'External URL', 'click', 'LinkedIn')
+    target: _blank
   - text: Resume
     url: /media/Resume.pdf
-    newWindow: true
+    onClick: gtag('send', 'event', 'Download', 'click', 'Resume')
+    target: _blank
   - text: Contact
     url: mailto:&#104;&#105;&#64;&#98;&#114;&#101;&#110;&#100;&#97;&#110;&#97;&#114;&#99;&#105;&#115;&#122;&#101;&#119;&#115;&#107;&#105;&#46;&#99;&#97;
 ---
@@ -40,7 +42,7 @@ navigation:
 <body>
   <nav id="nav">
     {% for link in layout.navigation %}
-    <a {% if page.url == link.url %}class="active"{% endif %} href="{{link.url}}" {% if link.newWindow %}target="_blank"{% endif %} title="{{link.title}}">{{link.text}}</a>
+    <a {% if page.url == link.url %}class="active"{% endif %} href="{{link.url}}" {% if link.onClick %}onClick="{{link.onClick}}"{% endif %} {% if link.target %}target="{{link.target}}"{% endif %} title="{{link.title}}">{{link.text}}</a>
     {% endfor %}
   </nav>
   {{ content }}
