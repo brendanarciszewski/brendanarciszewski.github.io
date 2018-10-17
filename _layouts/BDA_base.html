@@ -6,11 +6,11 @@ navigation:
     url: /projects/
   - text: LinkedIn
     url: https://linkedin.com/in/brendan-arciszewski
-    onClick: gtag('event', 'click', {'event_category': 'External URL', 'event_label': 'LinkedIn'})
+    gtag: "'event_category': 'External_URL', 'event_label': 'LinkedIn'"
     target: _blank
   - text: Resume
     url: /media/Resume.pdf
-    onClick: gtag('event', 'click', {'event_category': 'Download', 'event_label': 'Resume'})
+    gtag: "'event_category': 'Download', 'event_label': 'Resume'"
     target: _blank
   - text: Contact
     url: mailto:&#104;&#105;&#64;&#98;&#114;&#101;&#110;&#100;&#97;&#110;&#97;&#114;&#99;&#105;&#115;&#122;&#101;&#119;&#115;&#107;&#105;&#46;&#99;&#97;
@@ -42,7 +42,7 @@ navigation:
 <body>
   <nav id="nav">
     {% for link in layout.navigation %}
-    <a {% if page.url == link.url %}class="active"{% endif %} href="{{link.url}}" {% if link.onClick %}onClick="{{link.onClick}}"{% endif %} {% if link.target %}target="{{link.target}}"{% endif %} title="{{link.title}}">{{link.text}}</a>
+    <a {% if page.url == link.url %}class="active"{% endif %} href="{{link.url}}" {% if link.gtag %}onclick="gtag('event', 'click', {%raw%}{{%endraw%}{{link.gtag}}});"{% endif %} {% if link.target %}target="{{link.target}}"{% endif %} title="{{link.title}}">{{link.text}}</a>
     {% endfor %}
   </nav>
   {{ content }}
