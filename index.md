@@ -6,5 +6,9 @@ before_con: achievements.html
 -after_con: quotes.html
 con_sidebar_1: encouragement.md
 ---
+
 ## About Me
-I am interested in robotics and control systems, and want to inspire that curiousity within others. Sometimes that curiousity leads to cool products. Because I love to learn, I always want to succeed.
+
+I am interested in robotics, embedded, and control systems because I enjoy
+problem solving at a low-level - with both software and hardware. I love
+turning that curiousity into cool products!
