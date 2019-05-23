@@ -21,7 +21,7 @@
  * ----------------------------------------------- */
 
 html {
-    font: 0.9em AcherusGrotesque, Helvetica, Arial, sans-serif;
+    font: 0.9em AcherusGrotesque, Avenir, "Helvetica Neue", Arial, sans-serif;
     --main-background-colour: #333333;
     --main-margin: 0 auto;
     --module-padding: 1rem 3rem;
