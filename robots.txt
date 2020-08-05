@@ -1,4 +1,0 @@
-#Robots.txt for brendanarciszewski.ca (allows all pages)
-
-User-agent: *
-Disallow:

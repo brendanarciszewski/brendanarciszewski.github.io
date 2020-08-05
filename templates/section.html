@@ -1,0 +1,14 @@
+{% extends "BDA/static_section.html" %}
+
+{% block content %}
+{{ super() }}
+
+<ul class="category-list">
+	{% for post in section.pages | sort(attribute="date") | reverse %}
+	<li>
+		<a class="show-hidden" href="#"><h2>{{ post.title }}</h2></a>
+		<div class="modal hide"> {{ post.content | safe }} </div>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock content %}

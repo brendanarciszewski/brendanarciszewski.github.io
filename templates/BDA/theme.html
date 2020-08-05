@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117362578-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-117362578-1');
+  </script>
+  <!-- End Google Analytics -->
+  <title>{% block title %}{% endblock title %}{% if current_path != "/" %} | BA{% endif %}</title>
+  <link rel="stylesheet" href="/css/mobile-base.css">
+  <link rel="stylesheet" media="(min-width: 600px)" href="/css/tablet.css">
+  <link rel="stylesheet" media="(min-width: 1000px)" href="/css/desktop.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/js/scripts.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="description" content="My Personal Website" />
+  <meta name="keywords" content="personal, resume, robotics, robots, control systems, control, development" />
+  <meta name="author" content="Brendan Arciszewski" />
+</head>
+<body>
+  <nav id="nav">
+    {% for link in config.extra.navigation %}
+    <a {% if current_path == link.url %}class="active"{% endif %}
+       href="{{ link.url | safe }}"
+       {% if link.gtag %}onclick="gtag('event', 'click', {% raw %}{{% endraw %}{{ link.gtag }}});"{% endif %}
+       {% if link.target %}target="{{ link.target }}"{% endif %}
+       title="{{ link.text }}">{{ link.text }}</a>
+    {% endfor %}
+  </nav>
+  {% block body %}{% endblock body %}
+  <footer id="footer"><div id="row1">
+    <span style="display: inline-block;">Copyright &copy; 2018—{{ now() | date(format="%Y") }} Brendan Arciszewski</span>
+  </div></footer>
+</body>
+</html>
