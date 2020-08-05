@@ -46,7 +46,11 @@ navigation:
 <body>
   <nav id="nav">
     {% for link in layout.navigation %}
-    <a {% if page.url == link.url %}class="active"{% endif %} href="{{link.url}}" {% if link.gtag %}onclick="gtag('event', 'click', {%raw%}{{%endraw%}{{link.gtag}}});"{% endif %} {% if link.target %}target="{{link.target}}"{% endif %} title="{{link.title}}">{{link.text}}</a>
+    <a {% if page.url == link.url %}class="active"{% endif %}
+       href="{{link.url}}"
+       {% if link.gtag %}onclick="gtag('event', 'click', {%raw%}{{%endraw%}{{link.gtag}}});"{% endif %}
+       {% if link.target %}target="{{link.target}}"{% endif %}
+       title="{{link.title}}">{{link.text}}</a>
     {% endfor %}
   </nav>
   {{ content }}
