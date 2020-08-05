@@ -14,9 +14,9 @@ build_search_index = false
 [extra]
 navigation = [
   { text = "Home", url = "/" },
-  { text = "Projects", url = "projects/" },
+  { text = "Projects", url = "/projects/" },
   { text = "Source Code", url = "https://github.com/brendanarciszewski", gtag = "'event_category': 'External_URL', 'event_label': 'GitHub'", target = "_blank" },
   { text = "LinkedIn", url = "https://linkedin.com/in/brendan-arciszewski", gtag = "'event_category': 'External_URL', 'event_label': 'LinkedIn'", target = "_blank" },
-  { text = "Resume", url = "media/Resume.pdf", gtag = "'event_category': 'Download', 'event_label': 'Resume'", target = "_blank" },
+  { text = "Resume", url = "/media/Resume.pdf", gtag = "'event_category': 'Download', 'event_label': 'Resume'", target = "_blank" },
   { text = "Contact", url = "mailto:&#104;&#105;&#64;&#98;&#114;&#101;&#110;&#100;&#97;&#110;&#97;&#114;&#99;&#105;&#115;&#122;&#101;&#119;&#115;&#107;&#105;&#46;&#99;&#97;" },
 ]

@@ -24,13 +24,15 @@
 </head>
 <body>
   <nav id="nav">
-    {% for link in config.extra.navigation %}
-    <a {% if current_path == link.url %}class="active"{% endif %}
-       href="{{ link.url | safe }}"
-       {% if link.gtag %}onclick="gtag('event', 'click', {% raw %}{{% endraw %}{{ link.gtag }}});"{% endif %}
-       {% if link.target %}target="{{ link.target }}"{% endif %}
-       title="{{ link.text }}">{{ link.text }}</a>
-    {% endfor %}
+    {% for link in config.extra.navigation %}<a
+      {% if current_path | trim_start_matches(pat="/") == link.url | trim_start_matches(pat="/") %}
+      class="active"
+      {% endif %}
+      href="{{ link.url | safe }}"
+      {% if link.gtag %}onclick="gtag('event', 'click', {% raw %}{{% endraw %}{{ link.gtag }}});"{% endif %}
+      {% if link.target %}target="{{ link.target }}"{% endif %}
+      title="{{ link.text }}">{{ link.text }}
+    </a>{% endfor %}
   </nav>
   {% block body %}{% endblock body %}
   <footer id="footer"><div id="row1">
