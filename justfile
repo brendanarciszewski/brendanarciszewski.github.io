@@ -8,6 +8,10 @@ pack:
     @just wasm-spa
     zola build
 
+pack-url URL:
+    @just wasm-spa
+    zola build --base-url {{URL}}
+
 serve:
     @just pack
     miniserve --index index.html -- public/
