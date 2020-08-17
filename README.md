@@ -3,10 +3,20 @@ A homepage, projects, and eventually a blog.
 
 ## Build
 ```shell
-zola build
+just dev build
+```
+
+## Serve
+```shell
+just dev serve
 ```
 
 ## Deployment
-Github Actions is used for CI.
+Github Actions is used for CI and to deploy to Netlify.
 
-Netlify is used for deployment.
+### [Testing Deployment](https://temp--brendanarciszewski.netlify.app)
+```shell
+just deploy
+```
+
+The CI does not call this directly since we want to pass `--prod` to Netlify if necessary, among other things.
