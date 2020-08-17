@@ -1,15 +1,20 @@
 [build]
 publish = "public"
-command = "just pack"
+command = "echo 'deploy with CI' && test '1' = '0'"
 
-[build.environment]
-# Set the version name that you want to use and Netlify will automatically use it.
-ZOLA_VERSION = "0.11.0"
+[build.processing]
+skip_processing = false
 
-# The magic for deploying previews of branches.
-# We need to override the base url with whatever url Netlify assigns to our
-# preview site.  We do this using the Netlify environment variable
-# `$DEPLOY_PRIME_URL`.
+[build.processing.css]
+bundle = true
+minify = true
 
-[context.deploy-preview]
-command = "just pack-url $DEPLOY_PRIME_URL"
+[build.processing.js]
+bundle = true
+minify = true
+
+[build.processing.html]
+pretty_urls = true
+
+[build.processing.images]
+compress = true

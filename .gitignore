@@ -1,8 +1,4 @@
 .idea
 .vscode
 public/
-
-#Added by cargo
-
 /target
-Cargo.lock

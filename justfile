@@ -4,22 +4,20 @@ zola-dev COMMAND="serve" TYPE="--dev":
 
 alias dev := zola-dev
 
-pack:
+deploy:
     @just wasm-spa
-    zola build
-
-pack-url URL:
-    @just wasm-spa
-    zola build --base-url {{URL}}
+    zola build --base-url https://temp--brendanarciszewski.netlify.app
+    netlify deploy --auth {{ env_var("NETLIFY_AUTH_TOKEN") }} --site {{ env_var("NETLIFY_SITE_ID") }} --alias temp
 
 serve:
-    @just pack
+    @just wasm-spa
+    zola build
     miniserve --index index.html -- public/
 
 wasm-spa-dev TYPE="--profile":
-    wasm-pack build {{TYPE}} --target web --out-name wasm --out-dir content/app
-    rm content/app/README.md
+    wasm-pack build {{TYPE}} --target web --out-name wasm --out-dir static/app
+    rm static/app/README.md
 
 wasm-spa:
     @just wasm-spa-dev "--release"
-    rm content/app/package.json content/app/*.ts
+    rm static/app/package.json static/app/*.ts

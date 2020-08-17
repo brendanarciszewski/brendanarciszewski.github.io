@@ -2,30 +2,31 @@ name: CI
 
 on:
   push:
-    branches: [ master, develop ]
   pull_request:
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/master'
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-      - name: 'Build only'
-        uses: brendanarciszewski/zola-deploy-action@master
-        env:
-          BUILD_ONLY: true
-          BUILD_NO_THEMES: true
-          BUILD_DIR: .
-          BUILD_FLAGS: --drafts
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
   build_and_deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v2
-      - name: 'Build and deploy'
+      - uses: rlespinasse/github-slug-action@v2.x
+      - name: 'Install CLI Tools'
+        run: |
+          wasm-pack help > /dev/null 2>&1 || curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+          if [ ! -e just ]; then
+          curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to .
+          fi
+      - name: 'Cache `cargo` deps'
+        uses: actions/cache@v2
+        with:
+          path: target
+          key: ${{ runner.os }}-build-wasm-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-wasm-
+      - name: 'Build SPA'
+        run: PATH=.:$PATH ./just wasm-spa
+      - name: 'Deploy to Github (drafts; master-branch only)'
+        if: github.ref == 'refs/heads/master'
         uses: brendanarciszewski/zola-deploy-action@master
         env:
           PAGES_BRANCH: gh-pages
@@ -33,3 +34,34 @@ jobs:
           BUILD_DIR: .
           BUILD_FLAGS: --drafts --base-url https://brendanarciszewski.github.io
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      - name: 'Build Static Site (prod)'
+        if: github.ref == 'refs/heads/master'
+        uses: brendanarciszewski/zola-deploy-action@master
+        env:
+          BUILD_ONLY: true
+          BUILD_NO_THEMES: true
+          BUILD_DIR: .
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      - name: 'Build Static Site (dev)'
+        if: github.ref != 'refs/heads/master'
+        uses: brendanarciszewski/zola-deploy-action@master
+        env:
+          BUILD_ONLY: true
+          BUILD_NO_THEMES: true
+          BUILD_DIR: .
+          BUILD_FLAGS: --drafts --base-url https://${{ env.GITHUB_REF_SLUG_URL }}--brendanarciszewski.netlify.app
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      - name: 'Deploy to Netlify'
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: ./public
+          production-branch: master
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          github-token: ${{ secrets.TOKEN }}
+          netlify-config-path: ./netlify.toml
+          alias: ${{ env.GITHUB_REF_SLUG_URL }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
