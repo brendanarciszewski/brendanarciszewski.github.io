@@ -1,6 +1,6 @@
 zola-dev COMMAND="serve" TYPE="--dev":
     @just wasm-spa-dev {{TYPE}}
-    zola {{COMMAND}}
+    zola {{COMMAND}} --drafts
 
 alias dev := zola-dev
 
@@ -14,10 +14,10 @@ serve:
     zola build
     miniserve --index index.html -- public/
 
-wasm-spa-dev TYPE="--profile":
+wasm-spa-dev TYPE="--profiling":
     wasm-pack build {{TYPE}} --target web --out-name wasm --out-dir static/app
     rm static/app/README.md
 
 wasm-spa:
     @just wasm-spa-dev "--release"
-    rm static/app/package.json static/app/*.ts
+    rm static/app/package.json static/app/*.ts static/app/.gitignore

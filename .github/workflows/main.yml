@@ -42,7 +42,7 @@ jobs:
           BUILD_NO_THEMES: true
           BUILD_DIR: .
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-      - name: 'Build Static Site (dev)'
+      - name: 'Build Static Site (dev; drafts)'
         if: github.ref != 'refs/heads/master'
         uses: brendanarciszewski/zola-deploy-action@master
         env:
