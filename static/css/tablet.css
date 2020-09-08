@@ -9,3 +9,8 @@ footer > div#row1 {
 	display: flex;
 	justify-content: space-between;
 }
+
+nav#nav ul {
+    padding: 0;
+    list-style-type: none;
+}
