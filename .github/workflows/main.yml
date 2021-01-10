@@ -27,30 +27,30 @@ jobs:
         run: PATH=.:$PATH ./just wasm-spa
       - name: 'Deploy to Github (drafts; master-branch only)'
         if: github.ref == 'refs/heads/master'
-        uses: brendanarciszewski/zola-deploy-action@master
+        uses: shalzz/zola-deploy-action@v0.12.2
         env:
           PAGES_BRANCH: gh-pages
-          BUILD_NO_THEMES: true
+          BUILD_THEMES: false
           BUILD_DIR: .
           BUILD_FLAGS: --drafts --base-url https://brendanarciszewski.github.io
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
       - name: 'Build Static Site (prod)'
         if: github.ref == 'refs/heads/master'
-        uses: brendanarciszewski/zola-deploy-action@master
+        uses: shalzz/zola-deploy-action@v0.12.2
         env:
           BUILD_ONLY: true
-          BUILD_NO_THEMES: true
+          BUILD_THEMES: false
           BUILD_DIR: .
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
       - name: 'Build Static Site (dev; drafts)'
         if: github.ref != 'refs/heads/master'
-        uses: brendanarciszewski/zola-deploy-action@master
+        uses: shalzz/zola-deploy-action@v0.12.2
         env:
           BUILD_ONLY: true
-          BUILD_NO_THEMES: true
+          BUILD_THEMES: false
           BUILD_DIR: .
           BUILD_FLAGS: --drafts --base-url https://${{ env.GITHUB_REF_SLUG_URL }}--brendanarciszewski.netlify.app
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
       - name: 'Deploy to Netlify'
         uses: nwtgck/actions-netlify@v1.1
         with:
