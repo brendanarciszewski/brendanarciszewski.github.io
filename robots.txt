@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://brendanarciszewski.github.io/sitemap.xml
