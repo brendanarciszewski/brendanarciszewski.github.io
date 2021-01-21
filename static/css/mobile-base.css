@@ -209,14 +209,62 @@ main > div#con_sidebar {
     padding: var(--module-padding);
 }
 
-ul.category-list {
+/* ul.category-list {
     list-style: none;
     padding: 0;
 }
-/*ul.category-list > li:before {
+ul.category-list > li:before {
     content: '\25B6';
     margin: 0 1em 0 0;
-}*/
+}
 ul.category-list > li > div {
     margin-bottom: 2em;
+}*/
+
+/* -----------------------------------------------
+ * Category List
+ * ----------------------------------------------- */
+ div.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    height:100%;
+}
+
+div.category-list > div.category-list-column {
+    flex: 100%;
+    max-width: 100%;
+}
+
+.item-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.item-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.item-overlay {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: .5s ease;
+    background-color: var(--highlight-colour);
+}
+.item-container:hover .item-overlay {
+    opacity: 0;
+}
+.item-title {
+    color: black;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
