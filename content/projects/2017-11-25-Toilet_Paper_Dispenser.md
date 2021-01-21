@@ -6,7 +6,7 @@ path = "projects/1YDP"
 tags = ["UWaterloo", "robot"]
 
 [extra]
-photo = "media/Toilet-Paper-Dispenser.jpg"
+photo = "/media/Toilet-Paper-Dispenser.jpg"
 +++
 {{ header(title="Toilet Paper Dispenser", desc="a project in MTE 100 and GENE 121" )}}
 
