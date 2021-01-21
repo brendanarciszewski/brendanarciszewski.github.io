@@ -3,28 +3,12 @@
 {% block content %}
 {{ super() }}
 
-<!-- <ul class="category-list">
+<ul class="category-list">
 	{% for post in section.pages | sort(attribute="date") | reverse %}
 	<li>
 		<a class="show-hidden" href="#"><h2>{{ post.title }}</h2></a>
 		<div class="modal hide"> {{ post.content | safe }} </div>
 	</li>
 	{% endfor %}
-</ul> -->
-
-{% assign counter = 1 %}{% for item in site.categories[page.category] %}{% unless item.published == false %}{% assign counter=counter | plus:1 %}{% endunless %}{% endfor %}{% assign counter = counter | divided_by: 4 %}
-{% assign count = -1 %}
-<div class="category-list">
-	<div class="category-list-column">
-		{% for post in site.categories[page.category] %}{% if post.photo %}
-		<a class="show-hidden" href="#"><div class="item-container">
-			<img src="{{ post.photo }}" />
-			<div class="item-overlay"><div class="item-title">{{ post.title }}</div></div>
-			<div class="item-content hide" style="margin-top: -0.5em; margin-bottom: 1.5em;"> {{post.content}} </div>
-		</div></a>
-		{% assign count = count | plus:1 %}{% if count == counter %}{% assign count = 0 %}</div><div class="category-list-column">{% endif %}
-		{% endif %}{% endfor %}
-	</div>
-</div>
-
+</ul>
 {% endblock content %}

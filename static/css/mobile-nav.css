@@ -1,6 +1,7 @@
 nav#nav {
     grid-area: nav;
     background: var(--module-background-colour);
+    z-index: 97;
 }
 
 #navMenuToggle {
@@ -10,7 +11,7 @@ nav#nav {
     top: 50px;
     left: 50px;*/
 
-    z-index: 1;
+    z-index: 98;
 
     -webkit-user-select: none;
     user-select: none;
@@ -45,7 +46,7 @@ nav#nav {
     cursor: pointer;
 
     opacity: 0; /* hide this */
-    z-index: 2; /* and place it over the hamburger */
+    z-index: 99; /* and place it over the hamburger */
 
     -webkit-touch-callout: none;
 }
@@ -63,7 +64,7 @@ nav#nav {
     background: var(--main-background-colour);
     border-radius: 3px;
 
-    z-index: 1;
+    z-index: 98;
 
     transform-origin: 4px 0px;
 

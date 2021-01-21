@@ -1,0 +1,19 @@
+{% extends "BDA/static_section.html" %}
+
+{% block content %}
+<section id="con_article" class="project-list">
+	{% for post in section.pages | sort(attribute="date") | reverse %}
+	<div class="checkbox-viewport">
+		<input type="checkbox" class="show-content" />
+        <div class="item-container">
+			<img src="{% if post.extra.photo %}{{ post.extra['photo'] }}{% else %}nonexistent.jpg{% endif %}" />
+			<div class="item-overlay"><div class="item-title">{{ post.title }}</div></div>
+		</div>
+		<article id="project-{{post.title | slugify}}" class="item-content">
+			<small><a href="{{ post.permalink }}">Permalink</a></small>
+			{{ post.content | safe }}
+		</article>
+	</div>
+	{%- endfor %}
+</section>
+{% endblock content %}
