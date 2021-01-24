@@ -1,84 +1,84 @@
 nav#nav {
-    grid-area: nav;
-    background: var(--module-background-colour);
-    z-index: 97;
+	grid-area: nav;
+	background: var(--module-background-colour);
+	z-index: 97;
 }
 
 #navMenuToggle {
-    display: block;
-    margin: 20px 40px;
-    /*position: relative;
-    top: 50px;
-    left: 50px;*/
+	display: block;
+	margin: 20px 40px;
+	/*position: relative;
+	top: 50px;
+	left: 50px;*/
 
-    z-index: 98;
+	z-index: 98;
 
-    -webkit-user-select: none;
-    user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 #navMenuToggle a {
-    text-decoration: none;
-    color: var(--module-background-colour);
+	text-decoration: none;
+	color: var(--module-background-colour);
 
-    transition: color 0.3s ease;
+	transition: color 0.3s ease;
 }
 #navMenuToggle a:hover {
-    color: var(--highlight-colour);
+	color: var(--highlight-colour);
 }
 #navMenuToggle a.active,
 #navMenuToggle a.active:hover {
-    color: var(--highlight-colour);
-    color: var(--unemphasized-nav);
+	color: var(--highlight-colour);
+	color: var(--unemphasized-nav);
 }
 
 /* the hitbox */
 #navMenuToggle input {
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: 13px;
-    left: 34px;
-    /*top: -7px;
-    left: -5px;*/
+	display: block;
+	width: 40px;
+	height: 32px;
+	position: absolute;
+	top: 13px;
+	left: 34px;
+	/*top: -7px;
+	left: -5px;*/
 
-    cursor: pointer;
+	cursor: pointer;
 
-    opacity: 0; /* hide this */
-    z-index: 99; /* and place it over the hamburger */
+	opacity: 0; /* hide this */
+	z-index: 99; /* and place it over the hamburger */
 
-    -webkit-touch-callout: none;
+	-webkit-touch-callout: none;
 }
 
 /*
  * Just a quick hamburger
  */
 #navMenuToggle span {
-    display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
+	display: block;
+	width: 33px;
+	height: 4px;
+	margin-bottom: 5px;
+	position: relative;
 
-    background: var(--main-background-colour);
-    border-radius: 3px;
+	background: var(--main-background-colour);
+	border-radius: 3px;
 
-    z-index: 98;
+	z-index: 98;
 
-    transform-origin: 4px 0px;
+	transform-origin: 4px 0px;
 
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
+	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+				background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+				opacity 0.55s ease;
 }
 
 #navMenuToggle span:first-child {
-    transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
 }
 
 #navMenuToggle span:nth-last-child(2) {
-    transform-origin: 0% 100%;
+	transform-origin: 0% 100%;
 }
 
 /*
@@ -86,16 +86,16 @@ nav#nav {
  * into a crossmark.
  */
 #navMenuToggle input:checked ~ span {
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: var(--module-background-colour);
+	opacity: 1;
+	transform: rotate(45deg) translate(-2px, -1px);
+	background: var(--module-background-colour);
 }
 #navMenuToggle input:checked ~ span:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
+	opacity: 0;
+	transform: rotate(0deg) scale(0.2, 0.2);
 }
 #navMenuToggle input:checked ~ span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(0, -1px);
+	transform: rotate(-45deg) translate(0, -1px);
 }
 
 /*
@@ -103,29 +103,29 @@ nav#nav {
  * at the top left of the screen
  */
 #navMenu {
-    position: absolute;
-    width: 73vw;
-    box-sizing: border-box;
-    margin: -100px 0 0 -50px;
-    padding: 115px 50px 25px 50px;
+	position: absolute;
+	width: 73vw;
+	box-sizing: border-box;
+	margin: -100px 0 0 -50px;
+	padding: 115px 50px 25px 50px;
 
-    background: var(--main-background-colour);
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */
+	background: var(--main-background-colour);
+	list-style-type: none;
+	-webkit-font-smoothing: antialiased;
+	/* to stop flickering of text in safari */
 
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
+	transform-origin: 0% 0%;
+	transform: translate(-100%, 0);
 
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
 #navMenu li {
-    padding: 0.35rem 0;
-    font-size: 1.4rem;
+	padding: 0.35rem 0;
+	font-size: 1.4rem;
 }
 
 /* And let's slide it in from the left */
 #navMenuToggle input:checked ~ ul {
-    transform: none;
+	transform: none;
 }
