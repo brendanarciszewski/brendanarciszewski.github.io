@@ -12,6 +12,7 @@
 	<!-- End Google Analytics -->
 	<title>{% block title %}{% endblock title %}{% if current_path != "/" %} | BA{% endif %}</title>
 	<link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="stylesheet" href="/css/reset.css" />
 	<link rel="stylesheet" href="/css/mobile-base.css" />
 	<link rel="stylesheet" media="(max-width: 600px)" href="/css/mobile-nav.css" />
 	<link rel="stylesheet" media="(min-width: 600px)" href="/css/nav.css" />
@@ -27,7 +28,7 @@
 <body>
 	<nav id="nav">
 		<div id="navMenuToggle">
-			<input type="checkbox" />
+			<input type="checkbox" title="Show/Hide Mobile Menu"/>
 			<span></span>
 			<span></span>
 			<span></span>

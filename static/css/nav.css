@@ -21,12 +21,14 @@ nav#nav a.active,
 nav#nav a.active:hover {
 	background: var(--module-background-colour);
 	color: var(--unemphasized-nav);
+	text-decoration: underline;
+	text-underline-offset: 0.1em;
+	text-decoration-thickness: 0.25em;
 }
+nav#nav input,
 nav#nav span {
 	display: none;
-}
-nav#nav input {
-	display: none;
+	content-visibility: hidden;
 }
 nav#nav ul {
 	list-style: none;
