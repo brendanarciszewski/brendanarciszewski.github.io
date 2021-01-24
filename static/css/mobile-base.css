@@ -16,10 +16,10 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
 /* -----------------------------------------------
  * General + Class Stuff
  * ----------------------------------------------- */
-
 html {
 	font: 0.9em AcherusGrotesque, Avenir, "Helvetica Neue", Arial, sans-serif;
 	--main-background-colour: #333333;
@@ -27,11 +27,15 @@ html {
 	--module-padding: 1rem 3rem;
 	--module-background-colour: #EAEAEA;
 	--highlight-colour: #3BB03B;
+	--highlight-colour-wcag-aa-large: #339933; /*3D703D, 40733F, 417540, 287728*/
 	--link-colour: #0041C7;
 	--link-visited-colour: #0034A1;
-	--unemphasized-nav: grey;
+	--unemphasized-nav: #696969;
 	/* Prevents Landscape Text Adjustment on iOS*/
 	-webkit-text-size-adjust: 100%;
+}
+body {
+	line-height: 1.75em;
 }
 
 p,
@@ -44,7 +48,8 @@ figure {
 /*Title*/
 h1 {
 	font-size: 1.75rem;
-	color: var(--highlight-colour);
+	color: var(--highlight-colour-wcag-aa-large);
+	font-weight: bold;
 }
 
 /*Level One*/
@@ -232,75 +237,51 @@ ul.category-list > li > div {
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
-
-#con_article.project-list .item-container {
+#con_article.project-list > details.project > summary {
 	flex: initial;
-	display: inline-block;
+	display: list-item;
 	position: relative;
 	min-width: 100px;
 	min-height: 100px;
-	max-height: 300px;
+	list-style-type: none;
 }
-#con_article.project-list .item-container > img {
+#con_article.project-list > details.project > summary::-webkit-details-marker {
+	display: none;
+}
+#con_article.project-list > details.project > summary > img {
 	display: block;
 	max-width: 100%;
-	max-height: inherit;
+	max-height: 300px;
 }
-#con_article.project-list .item-container > .item-overlay {
+#con_article.project-list > details.project > summary > .item-overlay {
 	--overlay-colour: var(--highlight-colour);
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 67%;
-	opacity: 0;
 	transition: .5s ease;
 	background-color: var(--overlay-colour);
 	z-index: 2;
-}
-#con_article.project-list .item-container:hover > .item-overlay {
-	opacity: 1;
-}
-#con_article.project-list .item-container > .item-overlay > .item-title {
-	--overlay-title-colour: black;
-	color: var(--overlay-title-colour);
 	font-size: 1.2rem;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 	text-align: center;
 }
-
-#con_article.project-list input.show-content {
+#con_article.project-list > details.project > summary > .item-overlay > .item-title {
+	--overlay-title-colour: black;
+	color: var(--overlay-title-colour);
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+#con_article.project-list > details.project > summary > .item-overlay::after {
+	content: "\25B6";
+	float: right;
+	font-size: 1rem;
+	margin-right: 0.5em;
+	margin-left: 0.25em;
+	transition: 1s ease;
+}
+#con_article.project-list > details.project[open] > summary > .item-overlay::after {
+	content: "\25BC";
+}
+#con_article.project-list > details.project[open] {
+	background-color:#dadada;
+	padding: 1em;
+}
+#con_article.project-list > details.project[open] > article {
 	display: block;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	cursor: pointer;
-	padding: 0;
-	margin: 0;
-
-	opacity: 0; /* hide this */
-	z-index: 2; /* and place it over the image */
-
-	-webkit-touch-callout: none;
-}
-#con_article.project-list > .checkbox-viewport {
-	contain: paint;
-	float: left;
-	position: relative;
-	overflow: hidden;
-}
-#con_article.project-list input.show-content:checked ~ .item-content:target,
-#con_article.project-list .item-content {
-	display: none;
-}
-#con_article.project-list .item-content:target,
-#con_article.project-list input.show-content:checked ~ .item-content {
-	z-index: 3; /* place this over the checkbox */
-	position: relative;
-	display: block;
-	margin-top: -0.5em;
-	margin-bottom: 1.5em;
 }
