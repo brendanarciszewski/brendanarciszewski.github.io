@@ -9,21 +9,21 @@
 {% endif %}
 
 <section role="banner" id="header">
-  <header><h1>{% block title %}{{ page.title }}{% endblock title %}</h1></header>
-  <img src="/media/headshot-optim.jpg" id="headshot" alt="Brendan Arciszewski" />
+	<header><h1>{% block title %}{{ page.title }}{% endblock title %}</h1></header>
+	<img src="/media/headshot-optim.jpg" id="headshot" alt="Brendan Arciszewski" />
 </section>
 {% if extra.before_con %}
 <div id="before-con">{{ load_data(path=extra.before_con) | safe }}</div>
 {% endif %}
 <main {% if extra.con_sidebar_1 or extra.con_sidebar_2 %}class="withSidebar"{% endif %}>
-  {% if extra.con_nav %}<nav id="con_nav">{{ load_data(path=extra.con_nav) | safe }}</nav>{% endif %}
-  {% block content %}<article id="con_article">
-    {{ page.content | safe }}
-  </article>{% endblock content %}
-  <div id="con_sidebar">
-    {% if extra.con_sidebar_1 %}{{ load_data(path=extra.con_sidebar_1) | safe }}{% endif %}
-    {% if extra.con_sidebar_2 %}{{ load_data(path=extra.con_sidebar_2) | safe }}{% endif %}
-  </div>
+	{% if extra.con_nav %}<nav id="con_nav">{{ load_data(path=extra.con_nav) | safe }}</nav>{% endif %}
+	{% block content %}<article id="con_article">
+		{{ page.content | safe }}
+	</article>{% endblock content %}
+	<div id="con_sidebar">
+		{% if extra.con_sidebar_1 %}{{ load_data(path=extra.con_sidebar_1) | safe }}{% endif %}
+		{% if extra.con_sidebar_2 %}{{ load_data(path=extra.con_sidebar_2) | safe }}{% endif %}
+	</div>
 </main>
 {% if extra.after_con %}<div id="after-con">{{ load_data(path=extra.after_con) | safe }}</div>{% endif %}
 {% endblock body %}

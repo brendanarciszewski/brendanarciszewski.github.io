@@ -1,34 +1,34 @@
 nav#nav {
-    grid-area: nav;
-    margin: -0.5rem 0 0 0;
-    padding: var(--module-padding);
-    background: var(--module-background-colour);
+	grid-area: nav;
+	margin: -0.5rem 0 0 0;
+	padding: var(--module-padding);
+	background: var(--module-background-colour);
 }
 nav#nav a,
 nav#nav a:visited {
-    color: var(--menu-font-colour);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
+	color: var(--menu-font-colour);
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.1rem;
 
-    padding: 1rem;
-    display: inline-block;
+	padding: 1rem;
+	display: inline-block;
 }
 nav#nav a:hover {
-    background: var(--highlight-colour);
+	background: var(--highlight-colour);
 }
 nav#nav a.active,
 nav#nav a.active:hover {
-    background: var(--module-background-colour);
-    color: var(--unemphasized-nav);
+	background: var(--module-background-colour);
+	color: var(--unemphasized-nav);
 }
 nav#nav span {
-    display: none;
+	display: none;
 }
 nav#nav input {
-    display: none;
+	display: none;
 }
 nav#nav ul {
-    list-style: none;
-    padding: 0;
+	list-style: none;
+	padding: 0;
 }

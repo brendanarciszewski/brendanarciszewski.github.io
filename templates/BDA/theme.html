@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117362578-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-117362578-1');
-  </script>
-  <!-- End Google Analytics -->
-  <title>{% block title %}{% endblock title %}{% if current_path != "/" %} | BA{% endif %}</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="stylesheet" href="/css/mobile-base.css" />
-  <link rel="stylesheet" media="(max-width: 600px)" href="/css/mobile-nav.css" />
-  <link rel="stylesheet" media="(min-width: 600px)" href="/css/nav.css" />
-  <link rel="stylesheet" media="(min-width: 600px)" href="/css/tablet.css" />
-  <link rel="stylesheet" media="(min-width: 1000px)" href="/css/desktop.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta charset="UTF-8" />
-  <meta name="description" content="My Personal Website" />
-  <meta name="keywords" content="personal, resume, robotics, robots, control systems, control, development" />
-  <meta name="author" content="Brendan Arciszewski" />
-  {% block extra_head %}{% endblock extra_head%}
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117362578-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-117362578-1');
+	</script>
+	<!-- End Google Analytics -->
+	<title>{% block title %}{% endblock title %}{% if current_path != "/" %} | BA{% endif %}</title>
+	<link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="stylesheet" href="/css/mobile-base.css" />
+	<link rel="stylesheet" media="(max-width: 600px)" href="/css/mobile-nav.css" />
+	<link rel="stylesheet" media="(min-width: 600px)" href="/css/nav.css" />
+	<link rel="stylesheet" media="(min-width: 600px)" href="/css/tablet.css" />
+	<link rel="stylesheet" media="(min-width: 1000px)" href="/css/desktop.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="UTF-8" />
+	<meta name="description" content="My Personal Website" />
+	<meta name="keywords" content="personal, resume, robotics, robots, control systems, control, development" />
+	<meta name="author" content="Brendan Arciszewski" />
+	{% block extra_head %}{% endblock extra_head %}
 </head>
 <body>
-  <nav id="nav">
-    <div id="navMenuToggle">
-      <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
-      <ul id="navMenu">
-        {% for link in config.extra.navigation %}
-        <a {% if current_path | trim_start_matches(pat="/") == link.url | trim_start_matches(pat="/") %}
-           class="active"
-           {% endif %}
-           href="{{ link.url | safe }}"
-           {% if link.gtag %}onclick="gtag('event', 'click', {% raw %}{{% endraw %}{{ link.gtag }}});"{% endif %}
-           {% if link.target %}target="{{ link.target }}"{% endif %}
-           title="{{ link.text }}">
-          <li>{{ link.text }}</li>
-        </a>
-        {% endfor %}
-      </ul>
-    </div>
-  </nav>
-  {% block body %}{% endblock body %}
-  <footer id="footer"><div id="row1">
-    <span style="display: inline-block;">Copyright &copy; 2018—{{ now() | date(format="%Y") }} Brendan Arciszewski</span>
-  </div></footer>
+	<nav id="nav">
+		<div id="navMenuToggle">
+			<input type="checkbox" />
+			<span></span>
+			<span></span>
+			<span></span>
+			<ul id="navMenu">
+				{% for link in config.extra.navigation %}
+				<a {% if current_path | trim_start_matches(pat="/") == link.url | trim_start_matches(pat="/") %}
+				   class="active"
+				   {% endif %}
+				   href="{{ link.url | safe }}"
+				   {% if link.gtag %}onclick="gtag('event', 'click', {% raw %}{{% endraw %}{{ link.gtag }}});"{% endif %}
+				   {% if link.target %}target="{{ link.target }}"{% endif %}
+				   title="{{ link.text }}">
+					<li>{{ link.text }}</li>
+				</a>
+				{% endfor %}
+			</ul>
+		</div>
+	</nav>
+	{% block body %}{% endblock body %}
+	<footer id="footer"><div id="row1">
+		<span style="display: inline-block;">Copyright &copy; 2018—{{ now() | date(format="%Y") }} Brendan Arciszewski</span>
+	</div></footer>
 </body>
 </html>
