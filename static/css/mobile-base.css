@@ -5,14 +5,14 @@
 @font-face {
 	font-family: AcherusGrotesque;
 	src: url('acherusgrotesque-regularitalic-webfont.woff2') format('woff2'),
-		 url('acherusgrotesque-regularitalic-webfont.woff') format('woff');
+	     url('acherusgrotesque-regularitalic-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: italic;
 }
 @font-face {
 	font-family: AcherusGrotesque;
 	src: url('acherusgrotesque-regular-webfont.woff2') format('woff2'),
-		 url('acherusgrotesque-regular-webfont.woff') format('woff');
+	     url('acherusgrotesque-regular-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -131,12 +131,13 @@ body {
 	align-content: center;
 	max-width: 65em;
 	grid-template-columns: 100%;
-	grid-template-areas: "nav       "
-						 "header    "
-						 "before-con"
-						 "main      "
-						 "after-con "
-						 "footer    ";
+	grid-template-areas:
+		"nav       "
+		"header    "
+		"before-con"
+		"main      "
+		"after-con "
+		"footer    ";
 }
 
 
@@ -186,9 +187,10 @@ main {
 	display: grid;
 	grid-template-columns: 100%;
 	grid-gap: 0rem;
-	grid-template-areas: "con_nav    "
-						 "con_article"
-						 "con_sidebar";
+	grid-template-areas:
+		"con_nav    "
+		"con_article"
+		"con_sidebar";
 	/*coloured bands only above and below*/
 	background: var(--highlight-colour);
 	padding: var(--module-padding);

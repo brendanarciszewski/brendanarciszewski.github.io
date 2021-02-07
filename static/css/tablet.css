@@ -2,8 +2,8 @@
 main.withSidebar {
 	grid-template-columns: 72% 28%;
 	grid-template-areas:
-	"con_nav		con_nav"
-	"con_article	con_sidebar";
+		"con_nav     con_nav"
+		"con_article con_sidebar";
 }
 
 footer > div#row1 {
