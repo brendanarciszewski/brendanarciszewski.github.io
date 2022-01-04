@@ -26,8 +26,8 @@ jobs:
             ${{ runner.os }}-build-wasm-
       - name: 'Build SPA'
         run: PATH=.:$PATH ./just wasm-spa
-      - name: 'Deploy to Github (drafts; master-branch only)'
-        if: github.ref == 'refs/heads/master'
+      - name: 'Deploy to Github (drafts; `main` only)'
+        if: github.ref == 'refs/heads/main'
         uses: shalzz/zola-deploy-action@v0.12.2
         env:
           PAGES_BRANCH: gh-pages
@@ -35,16 +35,16 @@ jobs:
           BUILD_DIR: .
           BUILD_FLAGS: --drafts --base-url https://brendanarciszewski.github.io
           TOKEN: ${{ secrets.TOKEN }}
-      - name: 'Build Static Site (prod)'
-        if: github.ref == 'refs/heads/master'
+      - name: 'Build Static Site (prod; `main` only)'
+        if: github.ref == 'refs/heads/main'
         uses: shalzz/zola-deploy-action@v0.12.2
         env:
           BUILD_ONLY: true
           BUILD_THEMES: false
           BUILD_DIR: .
           TOKEN: ${{ secrets.TOKEN }}
-      - name: 'Build Static Site (dev; drafts)'
-        if: github.ref != 'refs/heads/master'
+      - name: 'Build Static Site (drafts; if not `main`)'
+        if: github.ref != 'refs/heads/main'
         uses: shalzz/zola-deploy-action@v0.12.2
         env:
           BUILD_ONLY: true
@@ -56,7 +56,7 @@ jobs:
         uses: nwtgck/actions-netlify@v1.1
         with:
           publish-dir: ./public
-          production-branch: master
+          production-branch: main
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false
           enable-commit-comment: true
