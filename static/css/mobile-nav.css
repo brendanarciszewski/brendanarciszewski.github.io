@@ -17,21 +17,6 @@ nav#nav {
 	user-select: none;
 }
 
-#navMenuToggle a {
-	text-decoration: none;
-	color: var(--module-background-colour);
-
-	transition: color 0.3s ease;
-}
-#navMenuToggle a:hover {
-	color: var(--highlight-colour);
-}
-#navMenuToggle a.active,
-#navMenuToggle a.active:hover {
-	color: var(--highlight-colour);
-	color: var(--unemphasized-nav);
-}
-
 /* the hitbox */
 #navMenuToggle input {
 	display: block;
@@ -54,7 +39,7 @@ nav#nav {
 /*
  * Just a quick hamburger
  */
-#navMenuToggle span {
+#navMenuToggle > span {
 	display: block;
 	width: 33px;
 	height: 4px;
@@ -73,11 +58,11 @@ nav#nav {
 				opacity 0.55s ease;
 }
 
-#navMenuToggle span:first-child {
+#navMenuToggle > span:first-child {
 	transform-origin: 0% 0%;
 }
 
-#navMenuToggle span:nth-last-child(2) {
+#navMenuToggle > span:nth-last-child(2) {
 	transform-origin: 0% 100%;
 }
 
@@ -102,7 +87,7 @@ nav#nav {
  * Make this absolute positioned
  * at the top left of the screen
  */
-#navMenu {
+ul#navMenu {
 	position: absolute;
 	width: 73vw;
 	box-sizing: border-box;
@@ -119,13 +104,28 @@ nav#nav {
 
 	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
-
 #navMenu li {
-	padding: 0.35rem 0;
-	font-size: 1.4rem;
+	padding: .45rem 0;
+	font-size: 1.5rem;
 }
 
+#navMenu a {
+	text-decoration: none;
+	color: var(--module-background-colour);
+
+	transition: color 0.3s ease;
+}
+#navMenu a:hover {
+	color: var(--highlight-colour);
+}
+#navMenu a.active,
+#navMenu a.active:hover {
+	color: var(--highlight-colour);
+	color: var(--unemphasized-nav);
+}
+
+
 /* And let's slide it in from the left */
-#navMenuToggle input:checked ~ ul {
+#navMenuToggle input:checked ~ #navMenu {
 	transform: none;
 }

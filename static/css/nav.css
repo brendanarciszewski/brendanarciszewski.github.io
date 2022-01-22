@@ -8,8 +8,8 @@ nav#nav a,
 nav#nav a:visited {
 	color: var(--menu-font-colour);
 	text-decoration: none;
-	font-weight: bold;
-	font-size: 1.1rem;
+	font-weight: normal;
+	font-size: 1.4rem;
 
 	padding: 1rem;
 	display: inline-block;
@@ -22,15 +22,20 @@ nav#nav a.active:hover {
 	background: var(--module-background-colour);
 	color: var(--unemphasized-nav);
 	text-decoration: underline;
-	text-underline-offset: 0.1em;
-	text-decoration-thickness: 0.25em;
+	text-underline-offset: 0.2em;
+	text-decoration-thickness: 0.2em;
 }
-nav#nav input,
-nav#nav span {
+nav#nav > #navMenuToggle > input,
+nav#nav span.burger {
 	display: none;
 	content-visibility: hidden;
 }
-nav#nav ul {
-	list-style: none;
+nav#nav ul#navMenu {
+	list-style-type: none;
 	padding: 0;
+	overflow-x: hidden;
+}
+
+nav#nav ul#navMenu li {
+	display: inline;
 }

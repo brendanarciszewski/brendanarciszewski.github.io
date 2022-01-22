@@ -15,3 +15,7 @@ nav#nav ul {
 	padding: 0;
 	list-style-type: none;
 }
+
+section#header img#headshot {
+	margin-top: max(-2.25rem, calc(-1rem - 2vw ));
+}

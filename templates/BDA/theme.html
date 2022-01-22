@@ -29,20 +29,20 @@
 	<nav id="nav">
 		<div id="navMenuToggle">
 			<input type="checkbox" title="Show/Hide Mobile Menu"/>
-			<span></span>
-			<span></span>
-			<span></span>
+			<span class="burger"></span>
+			<span class="burger"></span>
+			<span class="burger"></span>
 			<ul id="navMenu">
 				{% for link in config.extra.navigation %}
-				<a {% if current_path | trim_start_matches(pat="/") == link.url | trim_start_matches(pat="/") %}
+				<li><a {% if current_path | trim_start_matches(pat="/") == link.url | trim_start_matches(pat="/") %}
 				   class="active"
 				   {% endif %}
 				   href="{{ link.url | safe }}"
 				   {% if link.gtag %}onclick="gtag('event', 'click', {% raw %}{{% endraw %}{{ link.gtag }}});"{% endif %}
 				   {% if link.target %}target="{{ link.target }}"{% endif %}
 				   title="{{ link.text }}">
-					<li>{{ link.text }}</li>
-				</a>
+					{{ link.text }}
+				</a></li>
 				{% endfor %}
 			</ul>
 		</div>
