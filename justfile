@@ -1,3 +1,5 @@
+set dotenv-load := true
+
 zola-dev COMMAND="serve" TYPE="--dev":
     @just wasm-spa-dev {{TYPE}}
     zola {{COMMAND}} --drafts
